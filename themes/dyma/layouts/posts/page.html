@@ -1,0 +1,28 @@
+{{ define "main" }}
+  {{ $copy := site.Params.postDetail }}
+  {{ $list := site.GetPage "/posts" }}
+  {{ $ruledClass := "tag-list--ruled" }}
+  <article class="detail">
+    {{ with $list }}
+      <a class="back-link" href="{{ .RelPermalink }}">← {{ $copy.back }}</a>
+    {{ end }}
+    <h1 class="detail-title">{{ .Title }}</h1>
+    <div class="detail-meta">
+      {{ with .Date }}
+        <time datetime="{{ .Format `2006-01-02` }}">{{ .Format "January 2, 2006" }}</time>
+      {{ end }}
+      {{ if and hugo.IsDevelopment .Draft }}
+        <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
+      {{ end }}
+    </div>
+    {{ if .Params.platforms }}
+      {{ partial "platform-list.html" (dict "page" . "class" $ruledClass) }}
+      {{ partial "tag-list.html" (dict "page" .) }}
+    {{ else }}
+      {{ partial "tag-list.html" (dict "page" . "class" $ruledClass) }}
+    {{ end }}
+    <div class="markdown-body">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

@@ -1,0 +1,29 @@
+{{ define "main" }}
+  {{ $copy := site.Params.cvPage }}
+  <section class="cv-page">
+    <h1 class="page-heading">{{ $copy.heading }}</h1>
+    <p class="lede">
+      {{ $copy.lede }}
+      <a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">{{ $copy.ledeLinkLabel }}</a>.
+    </p>
+    <p class="hint">{{ $copy.hint }}</p>
+    <div class="actions">
+      <a
+        class="btn-pill btn-pill--solid"
+        href="{{ site.Params.cvUrl }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ $copy.downloadPdf }}
+      </a>
+      <a
+        class="btn-pill"
+        href="{{ site.Params.github }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ $copy.viewGithub }}
+      </a>
+    </div>
+  </section>
+{{ end }}

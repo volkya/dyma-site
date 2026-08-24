@@ -1,4 +1,58 @@
-footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+.site-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 1.1rem clamp(1rem, 4vw, 1.75rem) 1.35rem;
+  border-top: 1px solid var(--volkya-border);
+  background: var(--chrome-bg);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+}
+
+.footer-email {
+  color: var(--text-ui);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.footer-email:hover {
+  color: var(--text-headline);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 0.35rem;
+}
+
+.footer-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+}
+
+.footer-icon:hover {
+  color: var(--text-headline);
 }

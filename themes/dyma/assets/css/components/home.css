@@ -1,0 +1,144 @@
+.hero {
+  padding: 2.5rem 0 0;
+}
+
+.hero-kicker {
+  margin: 0 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero-body {
+  color: var(--text-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 40rem;
+}
+
+.hero-body p {
+  margin: 0;
+}
+
+.hero-body p + p {
+  margin-top: 1rem;
+}
+
+.stack {
+  margin: 2rem 0 0;
+  padding: 1.15rem 0 0;
+  border-top: 1px solid var(--volkya-border);
+  max-width: 40rem;
+}
+
+.stack-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stack-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-ui);
+  font-size: 0.88rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+}
+
+.journal {
+  margin-top: 3.25rem;
+  padding-top: 0.25rem;
+  max-width: 40rem;
+}
+
+.journal-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.journal-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
+}
+
+.journal-all {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.journal-all:hover {
+  color: var(--text-headline);
+}
+
+.journal-empty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.journal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.journal-list li {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--volkya-border);
+}
+
+.journal-list li:last-child {
+  border-bottom: 1px solid var(--volkya-border);
+}
+
+.journal-link {
+  color: var(--text-strong);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.journal-link:hover {
+  color: var(--text-headline);
+}
+
+.journal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.journal-meta time {
+  color: var(--text-ui);
+  font-variant-numeric: tabular-nums;
+}

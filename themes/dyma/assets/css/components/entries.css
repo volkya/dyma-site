@@ -1,0 +1,138 @@
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 40rem;
+}
+
+.entry {
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--volkya-border);
+}
+
+.entry:last-child {
+  border-bottom: 1px solid var(--volkya-border);
+}
+
+.entry-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
+.entry-title a {
+  color: var(--text-strong);
+  text-decoration: none;
+}
+
+.entry-title a:hover {
+  color: var(--text-headline);
+}
+
+.entry-summary {
+  margin: 0 0 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-bottom: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--text-ui);
+}
+
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  font-size: 0.85rem;
+}
+
+.entry-links a {
+  color: var(--text-headline);
+  text-decoration: none;
+}
+
+.entry-links a:hover {
+  text-decoration: underline;
+  color: var(--text-strong);
+}
+
+.detail {
+  max-width: 40rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.back-link:hover {
+  color: var(--text-headline);
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--text-ui);
+}
+
+.detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--volkya-border);
+  font-size: 0.9rem;
+}
+
+.detail-links a {
+  color: var(--text-headline);
+  text-decoration: none;
+}
+
+.detail-links a:hover {
+  text-decoration: underline;
+  color: var(--text-strong);
+}
+
+.detail .tag-list.tag-list--ruled {
+  margin: 0 0 1.5rem;
+  padding: 0 0 1.25rem;
+  border-bottom: 1px solid var(--volkya-border);
+}
+
+.cv-page {
+  max-width: 520px;
+}
+
+.cv-page .hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: -0.5rem 0 1.25rem;
+  line-height: 1.45;
+}
+
+.cv-page .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}

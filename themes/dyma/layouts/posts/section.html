@@ -1,0 +1,35 @@
+{{ define "main" }}
+  {{ $copy := site.Params.blogPage }}
+  <header class="page-intro">
+    <h1 class="page-heading">{{ $copy.heading }}</h1>
+    <p class="lede">{{ $copy.lede }}</p>
+  </header>
+
+  {{ $posts := .Pages }}
+  {{ if eq (len $posts) 0 }}
+    <p class="empty-msg">{{ $copy.empty }}</p>
+  {{ else }}
+    <ul class="entry-list">
+      {{ range $posts }}
+        <li class="entry">
+          <h2 class="entry-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          <div class="entry-meta">
+            {{ with .Date }}
+              <time datetime="{{ .Format `2006-01-02` }}">{{ .Format "Jan 2, 2006" }}</time>
+            {{ end }}
+            {{ if .Draft }}
+              <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
+            {{ end }}
+          </div>
+          {{ with .Description }}
+            <p class="entry-summary">{{ . }}</p>
+          {{ end }}
+          {{ partial "platform-list.html" (dict "page" .) }}
+          {{ partial "tag-list.html" (dict "page" .) }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ end }}

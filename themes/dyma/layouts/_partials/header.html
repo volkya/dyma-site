@@ -1,2 +1,21 @@
-<h1>{{ site.Title }}</h1>
+<a class="brand" href="{{ `/` | relURL }}">{{ site.Params.brand }}</a>
+<span class="spacer"></span>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<button
+  type="button"
+  class="theme-toggle"
+  aria-label="Switch to light mode"
+>
+  <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0-5a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM3 11a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm16 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM5.64 5.64a1 1 0 0 1 1.41 0l.71.71a1 1 0 0 1-1.41 1.41l-.71-.71a1 1 0 0 1 0-1.41zm12.02 12.02a1 1 0 0 1 1.41 0l.71.71a1 1 0 1 1-1.41 1.41l-.71-.71a1 1 0 0 1 0-1.41zM18.36 5.64a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0zM6.34 17.66a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0z"
+    />
+  </svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M12.73 2.03a1 1 0 0 1 .98 1.23 8 8 0 1 0 7.03 7.03 1 1 0 0 1 1.96.24 10 10 0 1 1-9.2-9.96 1 1 0 0 1-.77 1.46z"
+    />
+  </svg>
+</button>

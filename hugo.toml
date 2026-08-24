@@ -1,17 +1,85 @@
 baseURL = 'https://dymacorrea.pages.dev/'
-languageCode = 'en-us'
 title = 'Dyma Correa'
 theme = 'dyma'
+locale = 'en-US'
 
 [params]
   brand = 'DYMA CORREA'
   author = 'Dylan Matias Correa'
-  subtitle = 'Senior Software Engineer · Cloud & Solutions Architecture · Remote (GMT-3)'
   email = 'correa.dyma@gmail.com'
   github = 'https://github.com/Volkya'
+  githubAriaLabel = 'GitHub'
   linkedin = 'https://www.linkedin.com/in/dymacorrea/'
+  linkedinAriaLabel = 'LinkedIn'
   cvUrl = 'https://drive.google.com/file/d/1_mhwXQLwrHxt-lxcXVvxc7zH42MWw3_R/view?usp=sharing'
-  stack = 'Java · Kotlin · Go · Node.js · Python · Angular · React · AWS · Kubernetes · Docker · Terraform · ArgoCD · Prometheus · Microservices · Observability'
+
+[params.home]
+  heroTitle = 'Dylan Matias Correa'
+  heroSubtitle = 'Senior Software Engineer · Cloud & Solutions Architecture · Remote (GMT-3)'
+  stackAriaLabel = 'Core stack'
+  stackLabel = 'Stack'
+  ctaProjects = 'PROJECTS'
+  ctaCv = 'View CV'
+  journalHeading = 'Recent notes'
+  journalAll = 'All posts'
+  journalEmpty = 'No posts published yet.'
+  stack = [
+    'Java',
+    'Kotlin',
+    'Go',
+    'Node.js',
+    'Python',
+    'Angular',
+    'React',
+    'AWS',
+    'Kubernetes',
+    'Docker',
+    'Terraform',
+    'ArgoCD',
+    'Prometheus',
+    'Microservices',
+    'Observability',
+  ]
+  heroParagraphs = [
+    "I'm a Senior Software Engineer focused on cloud-native systems and solutions architecture: clear boundaries, honest trade-offs, and platforms that hold up under load.",
+    'Backend-first (Java, Kotlin, Go), with frontend when the product needs it (Angular, React)—microservices, events, and observability on AWS and Kubernetes.',
+    "Remote from GMT-3. I'm growing toward solutions architecture and practical AI on the backend: real-time processing, resilient platforms, and integrations that belong in production.",
+  ]
+
+[params.projectsPage]
+  heading = 'PROJECTS'
+  lede = 'Selected work and side projects.'
+  empty = 'No projects published yet.'
+  detail = 'Details'
+  repo = 'Repo'
+  demo = 'Demo'
+
+[params.blogPage]
+  heading = 'BLOG'
+  lede = 'Notes on backend systems, architecture, and engineering.'
+  empty = 'No posts published yet.'
+  draftChip = 'Draft'
+
+[params.cvPage]
+  heading = 'CV'
+  lede = 'PDF for applications; the up-to-date technical work lives on'
+  ledeLinkLabel = 'GitHub'
+  hint = 'Open the PDF online (anyone with the link can view), or browse the full history on GitHub.'
+  downloadPdf = 'View CV'
+  viewGithub = 'View GitHub'
+
+[params.projectDetail]
+  back = 'Projects'
+  code = 'Code'
+  demo = 'Demo'
+  notFound = 'No project found for that link.'
+  backButton = 'Back'
+
+[params.postDetail]
+  back = 'Blog'
+  draftChip = 'Draft (dev)'
+  notFound = 'No post found for that link.'
+  backButton = 'Back'
 
 [menus]
   [[menus.main]]
@@ -27,9 +95,12 @@ theme = 'dyma'
     pageRef = '/posts'
     weight = 30
 
+[permalinks]
+  posts = '/blog/:slug/'
+
 [outputs]
   home = ['HTML', 'RSS']
 
 [markup.highlight]
   style = 'github-dark'
-  noClasses = false
+  noClasses = true

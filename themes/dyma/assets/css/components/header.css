@@ -1,4 +1,97 @@
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+.app-toolbar {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  padding: 0 clamp(1rem, 4vw, 1.75rem);
+  background: var(--chrome-bg);
+  color: var(--text-ui);
+  border-bottom: 1px solid var(--volkya-border);
+  font-family: var(--font-body);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.app-toolbar .spacer {
+  flex: 1 1 auto;
+}
+
+.app-toolbar .brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: 1rem;
+  color: var(--text-ui);
+  text-decoration: none;
+}
+
+.app-toolbar .brand:hover {
+  color: var(--text-headline);
+}
+
+.app-toolbar nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.15rem;
+}
+
+.app-toolbar nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-decoration: none;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+.app-toolbar nav a:hover {
+  color: var(--text-ui);
+  background: transparent;
+}
+
+.app-toolbar nav a.active,
+.app-toolbar nav a.ancestor,
+.app-toolbar nav a[aria-current='page'] {
+  color: var(--text-ui);
+  background: var(--chrome-bg);
+  border-color: var(--volkya-border);
+}
+
+.app-toolbar .theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 0.15rem;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.app-toolbar .theme-toggle:hover {
+  color: var(--text-headline);
+}
+
+.app-toolbar .theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+}
+
+html[data-theme='dark'] .theme-toggle .icon-moon,
+html[data-theme='light'] .theme-toggle .icon-sun {
+  display: none;
 }

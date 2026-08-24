@@ -1,9 +1,66 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+  {{ $home := site.Params.home }}
+  {{ $posts := where site.RegularPages "Section" "posts" | first 3 }}
+  {{ $blog := site.GetPage "/posts" }}
+
+  <section class="hero">
+    <p class="hero-kicker">{{ $home.heroSubtitle }}</p>
+    <h1 class="hero-title">{{ $home.heroTitle }}</h1>
+
+    <div class="hero-body">
+      {{ range $home.heroParagraphs }}
+        <p>{{ . }}</p>
+      {{ end }}
+    </div>
+
+    <div class="stack" aria-label="{{ $home.stackAriaLabel }}">
+      <span class="stack-label">{{ $home.stackLabel }}</span>
+      <ul class="stack-items">
+        {{ range $home.stack }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn-pill btn-pill--solid" href="{{ `/projects/` | relURL }}">{{ $home.ctaProjects }}</a>
+      <a
+        class="btn-pill"
+        href="{{ site.Params.cvUrl }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ $home.ctaCv }}
+      </a>
+    </div>
+  </section>
+
+  <section class="journal" aria-labelledby="journal-heading">
+    <div class="journal-head">
+      <h2 id="journal-heading" class="journal-title">{{ $home.journalHeading }}</h2>
+      {{ with $blog }}
+        <a class="journal-all" href="{{ .RelPermalink }}">{{ $home.journalAll }}</a>
+      {{ end }}
+    </div>
+
+    {{ if eq (len $posts) 0 }}
+      <p class="journal-empty">{{ $home.journalEmpty }}</p>
+    {{ else }}
+      <ul class="journal-list">
+        {{ range $posts }}
+          <li>
+            <a class="journal-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <div class="journal-meta">
+              {{ with .Date }}
+                <time datetime="{{ .Format `2006-01-02` }}">{{ .Format "2006-01-02" }}</time>
+              {{ end }}
+              {{ with .Description }}
+                <span>{{ . }}</span>
+              {{ end }}
+            </div>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </section>
 {{ end }}

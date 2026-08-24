@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ $copy := site.Params.projectDetail }}
+  {{ $list := site.GetPage "/projects" }}
+  <article class="detail">
+    {{ with $list }}
+      <a class="back-link" href="{{ .RelPermalink }}">← {{ $copy.back }}</a>
+    {{ end }}
+    <h1 class="detail-title">{{ .Title }}</h1>
+    {{ partial "tag-list.html" (dict "page" .) }}
+    {{ if or .Params.repo .Params.demo }}
+      <div class="detail-links">
+        {{ with .Params.repo }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $copy.code }}</a>
+        {{ end }}
+        {{ with .Params.demo }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+    <div class="markdown-body">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}
