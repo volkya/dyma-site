@@ -17,7 +17,7 @@ push to main / PR
 | Piece | Value |
 |--------|--------|
 | Generator | **Hugo** (extended) |
-| Hugo version | **0.147.9** (`HUGO_VERSION`) |
+| Hugo version | **0.165.0** (`HUGO_VERSION`, extended) |
 | Build output | `public` |
 
 This repo **replaces** the Angular portfolio on Cloudflare. Keep `Volkya/portfolio` on GitHub as archive; do not point Pages at it anymore.
@@ -41,7 +41,7 @@ hugo --gc --minify
 On each push/PR to `main`/`master`:
 
 1. Checkout
-2. Hugo 0.147.9 extended
+2. Hugo 0.165.0 extended
 3. `hugo --gc --minify`
 
 Runs: repo → **Actions**. A red check means this job failed; the live Pages site can still be up.
@@ -67,7 +67,7 @@ Pages → project → **Settings** → **Builds**:
 
 | Name | Value | Action |
 |------|--------|--------|
-| `HUGO_VERSION` | `0.147.9` | add |
+| `HUGO_VERSION` | `0.165.0` | add |
 | `NODE_VERSION` | `22` | remove (Angular leftover) |
 | `SKIP_DEPENDENCY_INSTALL` | `true` | remove (Angular leftover) |
 
