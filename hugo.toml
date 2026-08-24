@@ -53,6 +53,7 @@ locale = 'en-US'
   detail = 'Details'
   repo = 'Repo'
   demo = 'Demo'
+  draftChip = 'Draft'
 
 [params.blogPage]
   heading = 'BLOG'
@@ -72,6 +73,7 @@ locale = 'en-US'
   back = 'Projects'
   code = 'Code'
   demo = 'Demo'
+  draftChip = 'Draft (dev)'
   notFound = 'No project found for that link.'
   backButton = 'Back'
 

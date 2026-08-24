@@ -6,6 +6,11 @@
       <a class="back-link" href="{{ .RelPermalink }}">← {{ $copy.back }}</a>
     {{ end }}
     <h1 class="detail-title">{{ .Title }}</h1>
+    {{ if and hugo.IsDevelopment .Draft }}
+      <div class="detail-meta">
+        <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
+      </div>
+    {{ end }}
     {{ partial "tag-list.html" (dict "page" .) }}
     {{ if or .Params.repo .Params.demo }}
       <div class="detail-links">

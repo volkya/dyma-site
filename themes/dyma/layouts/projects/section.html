@@ -15,6 +15,11 @@
           <h2 class="entry-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h2>
+          {{ if .Draft }}
+            <div class="entry-meta">
+              <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
+            </div>
+          {{ end }}
           {{ with .Params.summary }}
             <p class="entry-summary">{{ . }}</p>
           {{ else }}
