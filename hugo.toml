@@ -1,0 +1,35 @@
+baseURL = 'https://dymacorrea.pages.dev/'
+languageCode = 'en-us'
+title = 'Dyma Correa'
+theme = 'dyma'
+
+[params]
+  brand = 'DYMA CORREA'
+  author = 'Dylan Matias Correa'
+  subtitle = 'Senior Software Engineer · Cloud & Solutions Architecture · Remote (GMT-3)'
+  email = 'correa.dyma@gmail.com'
+  github = 'https://github.com/Volkya'
+  linkedin = 'https://www.linkedin.com/in/dymacorrea/'
+  cvUrl = 'https://drive.google.com/file/d/1_mhwXQLwrHxt-lxcXVvxc7zH42MWw3_R/view?usp=sharing'
+  stack = 'Java · Kotlin · Go · Node.js · Python · Angular · React · AWS · Kubernetes · Docker · Terraform · ArgoCD · Prometheus · Microservices · Observability'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'Projects'
+    pageRef = '/projects'
+    weight = 20
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 30
+
+[outputs]
+  home = ['HTML', 'RSS']
+
+[markup.highlight]
+  style = 'github-dark'
+  noClasses = false
