@@ -12,13 +12,15 @@
       </div>
     {{ end }}
     {{ partial "tag-list.html" (dict "page" .) }}
-    {{ if or .Params.repo .Params.demo }}
+    {{ $repo := .Params.repo }}
+    {{ $demo := .Params.demo }}
+    {{ if or $repo $demo }}
       <div class="detail-links">
-        {{ with .Params.repo }}
-          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $copy.code }}</a>
+        {{ with $repo }}
+          <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.code }}</a>
         {{ end }}
-        {{ with .Params.demo }}
-          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>
+        {{ with $demo }}
+          <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>
         {{ end }}
       </div>
     {{ end }}

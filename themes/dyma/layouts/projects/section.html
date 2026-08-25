@@ -12,9 +12,23 @@
     <ul class="entry-list">
       {{ range $projects }}
         <li class="entry">
-          <h2 class="entry-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h2>
+          <div class="entry-head">
+            <h2 class="entry-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            {{ $repo := .Params.repo }}
+            {{ $demo := .Params.demo }}
+            {{ if or $repo $demo }}
+              <div class="entry-links">
+                {{ with $repo }}
+                  <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.repo }}</a>
+                {{ end }}
+                {{ with $demo }}
+                  <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
           {{ if .Draft }}
             <div class="entry-meta">
               <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
@@ -28,15 +42,6 @@
             {{ end }}
           {{ end }}
           {{ partial "tag-list.html" (dict "page" .) }}
-          <div class="entry-links">
-            <a href="{{ .RelPermalink }}">{{ $copy.detail }}</a>
-            {{ with .Params.repo }}
-              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $copy.repo }}</a>
-            {{ end }}
-            {{ with .Params.demo }}
-              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>
-            {{ end }}
-          </div>
         </li>
       {{ end }}
     </ul>
