@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ $home := site.Params.home }}
-  {{ $posts := where site.RegularPages "Section" "posts" | first 3 }}
-  {{ $blog := site.GetPage "/posts" }}
+  {{ $journal := or (site.GetPage "/journal") (site.GetPage "/journal/") }}
+  {{ $notes := where site.RegularPages "Section" "journal" | first 3 }}
 
   <section class="hero">
     <p class="hero-kicker">{{ $home.heroSubtitle }}</p>
@@ -38,16 +38,21 @@
   <section class="journal" aria-labelledby="journal-heading">
     <div class="journal-head">
       <h2 id="journal-heading" class="journal-title">{{ $home.journalHeading }}</h2>
-      {{ with $blog }}
-        <a class="journal-all" href="{{ .RelPermalink }}">{{ $home.journalAll }}</a>
+      {{ with $journal }}
+        <div class="journal-actions">
+          <a class="journal-all" href="{{ .RelPermalink }}">{{ $home.journalAll }}</a>
+          {{ with .OutputFormats.Get "RSS" }}
+            <a class="journal-all" href="{{ .RelPermalink }}">{{ site.Params.journalPage.rss }}</a>
+          {{ end }}
+        </div>
       {{ end }}
     </div>
 
-    {{ if eq (len $posts) 0 }}
+    {{ if eq (len $notes) 0 }}
       <p class="journal-empty">{{ $home.journalEmpty }}</p>
     {{ else }}
       <ul class="journal-list">
-        {{ range $posts }}
+        {{ range $notes }}
           <li>
             <a class="journal-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
             <div class="journal-meta">

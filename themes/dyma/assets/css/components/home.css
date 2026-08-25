@@ -75,6 +75,13 @@
   margin-bottom: 1.1rem;
 }
 
+.journal-actions {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
 .journal-title {
   margin: 0;
   font-family: var(--font-display);

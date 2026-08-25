@@ -1,3 +1,21 @@
+.page-intro-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rss-link {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.rss-link:hover {
+  color: var(--text-headline);
+}
+
 .entry-list {
   list-style: none;
   margin: 0;

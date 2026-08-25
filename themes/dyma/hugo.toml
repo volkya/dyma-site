@@ -9,8 +9,8 @@ title = 'Dylan M. Correa'
     weight = 10
 
   [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
+    name = 'Journal'
+    pageRef = '/journal'
     weight = 20
 
   [[menus.main]]

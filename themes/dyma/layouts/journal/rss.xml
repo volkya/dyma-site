@@ -1,0 +1,23 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+{{- $rss := .OutputFormats.Get "RSS" }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.Title }} — Journal</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ site.Params.journalPage.lede }}</description>
+    <generator>Hugo</generator>
+    <language>{{ or site.Language.Lang `en` }}</language>
+    {{- with $rss }}
+    <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
+    {{- end }}
+    {{- range (where .RegularPages "Draft" false | first 20) }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

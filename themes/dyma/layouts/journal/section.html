@@ -1,16 +1,21 @@
 {{ define "main" }}
-  {{ $copy := site.Params.blogPage }}
+  {{ $copy := site.Params.journalPage }}
   <header class="page-intro">
-    <h1 class="page-heading">{{ $copy.heading }}</h1>
+    <div class="page-intro-head">
+      <h1 class="page-heading">{{ $copy.heading }}</h1>
+      {{ with .OutputFormats.Get "RSS" }}
+        <a class="rss-link" href="{{ .RelPermalink }}" type="application/rss+xml">{{ $copy.rss }}</a>
+      {{ end }}
+    </div>
     <p class="lede">{{ $copy.lede }}</p>
   </header>
 
-  {{ $posts := .Pages }}
-  {{ if eq (len $posts) 0 }}
+  {{ $notes := .Pages }}
+  {{ if eq (len $notes) 0 }}
     <p class="empty-msg">{{ $copy.empty }}</p>
   {{ else }}
     <ul class="entry-list">
-      {{ range $posts }}
+      {{ range $notes }}
         <li class="entry">
           <h2 class="entry-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>

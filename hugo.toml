@@ -21,8 +21,8 @@ locale = 'en-US'
   ctaProjects = 'PROJECTS'
   ctaCv = 'View CV'
   journalHeading = 'Recent notes'
-  journalAll = 'All posts'
-  journalEmpty = 'No posts published yet.'
+  journalAll = 'All notes'
+  journalEmpty = 'No notes published yet.'
   stack = [
     'Java',
     'Kotlin',
@@ -55,11 +55,12 @@ locale = 'en-US'
   demo = 'Demo'
   draftChip = 'Draft'
 
-[params.blogPage]
-  heading = 'BLOG'
+[params.journalPage]
+  heading = 'JOURNAL'
   lede = 'Notes on backend systems, architecture, and engineering.'
-  empty = 'No posts published yet.'
+  empty = 'No notes published yet.'
   draftChip = 'Draft'
+  rss = 'RSS'
 
 [params.cvPage]
   heading = 'CV'
@@ -77,10 +78,10 @@ locale = 'en-US'
   notFound = 'No project found for that link.'
   backButton = 'Back'
 
-[params.postDetail]
-  back = 'Blog'
+[params.journalDetail]
+  back = 'Journal'
   draftChip = 'Draft (dev)'
-  notFound = 'No post found for that link.'
+  notFound = 'No note found for that link.'
   backButton = 'Back'
 
 [menus]
@@ -93,15 +94,16 @@ locale = 'en-US'
     pageRef = '/projects'
     weight = 20
   [[menus.main]]
-    name = 'Blog'
-    pageRef = '/posts'
+    name = 'Journal'
+    pageRef = '/journal'
     weight = 30
 
 [permalinks]
-  posts = '/blog/:slug/'
+  journal = '/journal/:slug/'
 
 [outputs]
-  home = ['HTML', 'RSS']
+  home = ['HTML']
+  section = ['HTML']
 
 [markup.highlight]
   style = 'github-dark'

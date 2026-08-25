@@ -19,11 +19,21 @@
 }
 
 .footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   color: var(--text-ui);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
   word-break: break-all;
+}
+
+.footer-email-icon {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
 }
 
 .footer-email:hover {

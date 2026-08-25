@@ -3,6 +3,7 @@ title = 'Observability on Kubernetes'
 date = 2026-08-24
 description = 'What I actually look at in prod: metrics, logs, traces.'
 slug = 'observability-on-k8s'
+aliases = ['/blog/observability-on-k8s/', '/posts/observability-on-k8s/']
 draft = true
 tags = ['Kubernetes', 'Observability']
 

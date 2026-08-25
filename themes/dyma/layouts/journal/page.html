@@ -1,6 +1,6 @@
 {{ define "main" }}
-  {{ $copy := site.Params.postDetail }}
-  {{ $list := site.GetPage "/posts" }}
+  {{ $copy := site.Params.journalDetail }}
+  {{ $list := or (site.GetPage "/journal") (site.GetPage "/journal/") }}
   {{ $ruledClass := "tag-list--ruled" }}
   <article class="detail">
     {{ with $list }}

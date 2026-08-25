@@ -8,6 +8,6 @@ demo = 'https://volkya.pages.dev/'
 tags = ['Hugo', 'CSS']
 +++
 
-A lightweight site for **projects** and **posts** without a CMS: copy lives in `content/`, and Hugo writes static HTML.
+A lightweight site for **projects** and **journal** notes without a CMS: copy lives in `content/`, and Hugo writes static HTML.
 
 GitHub remains the source of truth for code; this is just a clearer presentation layer.
