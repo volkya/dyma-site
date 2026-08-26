@@ -95,3 +95,14 @@ html[data-theme='dark'] .theme-toggle .icon-moon,
 html[data-theme='light'] .theme-toggle .icon-sun {
   display: none;
 }
+
+@media (max-width: 32rem) {
+  .app-toolbar .brand {
+    font-size: 0.92rem;
+  }
+
+  .app-toolbar nav a {
+    padding: 0 0.55rem;
+    font-size: 0.68rem;
+  }
+}

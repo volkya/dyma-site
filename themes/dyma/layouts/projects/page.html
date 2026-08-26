@@ -6,18 +6,20 @@
       <a class="back-link" href="{{ .RelPermalink }}">← {{ $copy.back }}</a>
     {{ end }}
     <h1 class="detail-title">{{ .Title }}</h1>
-    {{ if and hugo.IsDevelopment .Draft }}
-      <div class="detail-meta">
+    <div class="detail-meta">
+      {{ $kind := .Params.kind | default "example" }}
+      <span class="meta-pill">{{ if eq $kind "oss" }}{{ site.Params.projectsPage.kindOss }}{{ else }}{{ site.Params.projectsPage.kindExample }}{{ end }}</span>
+      {{ if and hugo.IsDevelopment .Draft }}
         <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
-      </div>
-    {{ end }}
+      {{ end }}
+    </div>
     {{ partial "tag-list.html" (dict "page" .) }}
     {{ $repo := .Params.repo }}
     {{ $demo := .Params.demo }}
     {{ if or $repo $demo }}
       <div class="detail-links">
         {{ with $repo }}
-          <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.code }}</a>
+          <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.repo }}</a>
         {{ end }}
         {{ with $demo }}
           <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>

@@ -20,9 +20,6 @@ locale = 'en-US'
   stackLabel = 'Stack'
   ctaProjects = 'PROJECTS'
   ctaCv = 'View CV'
-  journalHeading = 'Recent notes'
-  journalAll = 'All notes'
-  journalEmpty = 'No notes published yet.'
   stack = [
     'Java',
     'Kotlin',
@@ -41,16 +38,18 @@ locale = 'en-US'
     'Observability',
   ]
   heroParagraphs = [
-    "I'm a Senior Software Engineer focused on cloud-native systems and solutions architecture: clear boundaries, honest trade-offs, and platforms that hold up under load.",
-    'Backend-first (Java, Kotlin, Go), with frontend when the product needs it (Angular, React)—microservices, events, and observability on AWS and Kubernetes.',
-    "Remote from GMT-3. I'm growing toward solutions architecture and practical AI on the backend: real-time processing, resilient platforms, and integrations that belong in production.",
+    'I build cloud-native systems with clear boundaries and honest trade-offs—platforms that hold up under load.',
+    "Backend-first, frontend when the product needs it. I'm growing toward solutions architecture and practical AI on the backend: real-time processing, resilient platforms, and integrations that belong in production.",
   ]
 
 [params.projectsPage]
   heading = 'PROJECTS'
-  lede = 'Selected work and side projects.'
+  lede = 'Realistic systems from real domains, plus open source you can fork. Incomplete is fine: architecture and trade-offs are the point.'
   empty = 'No projects published yet.'
-  detail = 'Details'
+  examplesHeading = 'Case studies'
+  ossHeading = 'Open source'
+  kindExample = 'Case study'
+  kindOss = 'Open source'
   repo = 'Repo'
   demo = 'Demo'
   draftChip = 'Draft'
@@ -64,38 +63,32 @@ locale = 'en-US'
 
 [params.cvPage]
   heading = 'CV'
-  lede = 'PDF for applications; the up-to-date technical work lives on'
-  ledeLinkLabel = 'GitHub'
-  hint = 'Open the PDF online (anyone with the link can view), or browse the full history on GitHub.'
+  lede = 'PDF for applications. Code and commit history are on GitHub.'
+  hint = 'Opens in Google Drive — anyone with the link can view.'
   downloadPdf = 'View CV'
-  viewGithub = 'View GitHub'
 
 [params.projectDetail]
   back = 'Projects'
-  code = 'Code'
+  repo = 'Repo'
   demo = 'Demo'
   draftChip = 'Draft (dev)'
-  notFound = 'No project found for that link.'
-  backButton = 'Back'
 
 [params.journalDetail]
   back = 'Journal'
   draftChip = 'Draft (dev)'
-  notFound = 'No note found for that link.'
-  backButton = 'Back'
 
 [menus]
   [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 10
-  [[menus.main]]
     name = 'Projects'
     pageRef = '/projects'
-    weight = 20
+    weight = 10
   [[menus.main]]
     name = 'Journal'
     pageRef = '/journal'
+    weight = 20
+  [[menus.main]]
+    name = 'CV'
+    pageRef = '/cv'
     weight = 30
 
 [permalinks]

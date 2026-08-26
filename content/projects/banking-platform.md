@@ -3,6 +3,7 @@ title = 'Banking platform'
 summary = 'Admin shell + accounts API. Go backend, Angular frontend.'
 date = 2026-08-24
 draft = false
+kind = 'example'
 repo = 'https://github.com/Volkya/banking-platform-archetype'
 demo = ''
 tags = ['Go', 'Angular', 'AWS']

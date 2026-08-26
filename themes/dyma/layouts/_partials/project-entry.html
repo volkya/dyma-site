@@ -1,0 +1,35 @@
+{{- $copy := site.Params.projectsPage -}}
+{{- $kind := .Params.kind | default "example" -}}
+<li class="entry">
+  <div class="entry-head">
+    <h2 class="entry-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+    {{ $repo := .Params.repo }}
+    {{ $demo := .Params.demo }}
+    {{ if or $repo $demo }}
+      <div class="entry-links">
+        {{ with $repo }}
+          <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.repo }}</a>
+        {{ end }}
+        {{ with $demo }}
+          <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+  <div class="entry-meta">
+    <span class="meta-pill">{{ if eq $kind "oss" }}{{ $copy.kindOss }}{{ else }}{{ $copy.kindExample }}{{ end }}</span>
+    {{ if .Draft }}
+      <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
+    {{ end }}
+  </div>
+  {{ with .Params.summary }}
+    <p class="entry-summary">{{ . }}</p>
+  {{ else }}
+    {{ with .Description }}
+      <p class="entry-summary">{{ . }}</p>
+    {{ end }}
+  {{ end }}
+  {{ partial "tag-list.html" (dict "page" .) }}
+</li>

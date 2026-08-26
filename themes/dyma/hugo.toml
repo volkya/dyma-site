@@ -4,8 +4,8 @@ title = 'Dylan M. Correa'
 
 [menus]
   [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
+    name = 'Projects'
+    pageRef = '/projects'
     weight = 10
 
   [[menus.main]]
@@ -14,8 +14,8 @@ title = 'Dylan M. Correa'
     weight = 20
 
   [[menus.main]]
-    name = 'Tags'
-    pageRef = '/tags'
+    name = 'CV'
+    pageRef = '/cv'
     weight = 30
 
 [module]

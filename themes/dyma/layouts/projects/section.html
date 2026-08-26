@@ -9,41 +9,34 @@
   {{ if eq (len $projects) 0 }}
     <p class="empty-msg">{{ $copy.empty }}</p>
   {{ else }}
-    <ul class="entry-list">
-      {{ range $projects }}
-        <li class="entry">
-          <div class="entry-head">
-            <h2 class="entry-title">
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-            {{ $repo := .Params.repo }}
-            {{ $demo := .Params.demo }}
-            {{ if or $repo $demo }}
-              <div class="entry-links">
-                {{ with $repo }}
-                  <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.repo }}</a>
-                {{ end }}
-                {{ with $demo }}
-                  <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $copy.demo }}</a>
-                {{ end }}
-              </div>
-            {{ end }}
-          </div>
-          {{ if .Draft }}
-            <div class="entry-meta">
-              <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
-            </div>
+    {{ $oss := where $projects "Params.kind" "eq" "oss" }}
+    {{ $examples := where $projects "Params.kind" "ne" "oss" }}
+    {{ $split := and (gt (len $examples) 0) (gt (len $oss) 0) }}
+
+    {{ if gt (len $examples) 0 }}
+      <section class="entry-group" {{ if $split }}aria-labelledby="examples-heading"{{ end }}>
+        {{ if $split }}
+          <h2 id="examples-heading" class="entry-group-title">{{ $copy.examplesHeading }}</h2>
+        {{ end }}
+        <ul class="entry-list">
+          {{ range $examples }}
+            {{ partial "project-entry.html" . }}
           {{ end }}
-          {{ with .Params.summary }}
-            <p class="entry-summary">{{ . }}</p>
-          {{ else }}
-            {{ with .Description }}
-              <p class="entry-summary">{{ . }}</p>
-            {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+
+    {{ if gt (len $oss) 0 }}
+      <section class="entry-group" {{ if $split }}aria-labelledby="oss-heading"{{ end }}>
+        {{ if $split }}
+          <h2 id="oss-heading" class="entry-group-title">{{ $copy.ossHeading }}</h2>
+        {{ end }}
+        <ul class="entry-list">
+          {{ range $oss }}
+            {{ partial "project-entry.html" . }}
           {{ end }}
-          {{ partial "tag-list.html" (dict "page" .) }}
-        </li>
-      {{ end }}
-    </ul>
+        </ul>
+      </section>
+    {{ end }}
   {{ end }}
 {{ end }}
