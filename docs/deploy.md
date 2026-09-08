@@ -50,7 +50,7 @@ Runs: repo → **Actions**. A red check means this job failed; the live Pages si
 
 ## 3. Cloudflare Pages (CD)
 
-Reuse the existing Pages project (`dymacorrea` → `https://dymacorrea.pages.dev/`) so the URL stays the same.
+Reuse the existing Pages project (`dyma-site` → `https://dyma-site.pages.dev/`) so the URL stays the same.
 
 Pages → project → **Settings** → **Builds**:
 
