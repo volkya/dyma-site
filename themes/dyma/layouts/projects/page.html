@@ -5,8 +5,8 @@
     {{ with $list }}
       <a class="back-link" href="{{ .RelPermalink }}">← {{ $copy.back }}</a>
     {{ end }}
-    <h1 class="detail-title">{{ .Title }}</h1>
-    <div class="detail-meta">
+    <div class="detail-title-row">
+      <h1 class="detail-title">{{ .Title }}</h1>
       {{ $kind := .Params.kind | default "example" }}
       <span class="meta-pill">{{ if eq $kind "oss" }}{{ site.Params.projectsPage.kindOss }}{{ else }}{{ site.Params.projectsPage.kindExample }}{{ end }}</span>
       {{ if and hugo.IsDevelopment .Draft }}

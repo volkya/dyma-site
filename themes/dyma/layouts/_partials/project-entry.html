@@ -2,9 +2,13 @@
 {{- $kind := .Params.kind | default "example" -}}
 <li class="entry">
   <div class="entry-head">
-    <h2 class="entry-title">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h2>
+    <div class="entry-title-row">
+      <h2 class="entry-title">{{ .Title }}</h2>
+      <span class="meta-pill">{{ if eq $kind "oss" }}{{ $copy.kindOss }}{{ else }}{{ $copy.kindExample }}{{ end }}</span>
+      {{ if .Draft }}
+        <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
+      {{ end }}
+    </div>
     {{ $repo := .Params.repo }}
     {{ $demo := .Params.demo }}
     {{ if or $repo $demo }}
@@ -18,16 +22,10 @@
       </div>
     {{ end }}
   </div>
-  <div class="entry-meta">
-    <span class="meta-pill">{{ if eq $kind "oss" }}{{ $copy.kindOss }}{{ else }}{{ $copy.kindExample }}{{ end }}</span>
-    {{ if .Draft }}
-      <span class="meta-pill meta-pill--accent">{{ $copy.draftChip }}</span>
-    {{ end }}
-  </div>
-  {{ with .Params.summary }}
-    <p class="entry-summary">{{ . }}</p>
+  {{ with .Content }}
+    <div class="entry-body markdown-body">{{ . }}</div>
   {{ else }}
-    {{ with .Description }}
+    {{ with .Params.summary }}
       <p class="entry-summary">{{ . }}</p>
     {{ end }}
   {{ end }}

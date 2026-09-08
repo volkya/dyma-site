@@ -1,9 +1,10 @@
 {{- $page := .page -}}
 {{- $class := .class | default "" -}}
+{{- $plain := in $class "tag-list--plain" -}}
 {{- with $page.Params.tags -}}
   <ul class="tag-list{{ with $class }} {{ . }}{{ end }}" aria-label="Tags">
     {{- range . -}}
-      <li class="meta-pill">{{ . }}</li>
+      <li{{ if not $plain }} class="meta-pill"{{ end }}>{{ if $plain }}#{{ end }}{{ . }}</li>
     {{- end -}}
   </ul>
 {{- end -}}

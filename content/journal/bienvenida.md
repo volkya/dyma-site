@@ -1,7 +1,6 @@
 +++
 title = 'Welcome to the journal'
 date = 2026-04-22
-description = 'Markdown in the repo — link out to Dev.to / Medium when you republish.'
 slug = 'bienvenida'
 aliases = ['/blog/bienvenida/', '/posts/bienvenida/']
 draft = false

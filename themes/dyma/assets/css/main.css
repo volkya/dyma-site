@@ -121,6 +121,37 @@ a {
   margin-bottom: 1rem;
 }
 
+.detail-title-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.detail-title-row .detail-title {
+  margin-bottom: 0;
+}
+
+.detail-title-row .detail-title::after {
+  display: none;
+}
+
+.detail-title-row::after {
+  content: '';
+  display: block;
+  flex-basis: 100%;
+  height: 1px;
+  margin-top: 0.45rem;
+  background: linear-gradient(
+    to right,
+    var(--text-headline) 0,
+    var(--text-headline) 2.25rem,
+    var(--rule-muted) 2.25rem,
+    var(--rule-muted) 100%
+  );
+}
+
 .page-heading::after,
 .hero-title::after,
 .detail-title::after {
@@ -208,6 +239,19 @@ a.meta-pill:hover {
   list-style: none;
   margin: 0 0 0.75rem;
   padding: 0;
+}
+
+.tag-list--inline {
+  margin: 0;
+}
+
+.tag-list--plain {
+  gap: 0.55rem 0.85rem;
+  color: var(--text-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .tag-list .meta-pill {

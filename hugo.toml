@@ -44,7 +44,7 @@ locale = 'en-US'
 
 [params.projectsPage]
   heading = 'PROJECTS'
-  lede = 'Realistic systems from real domains, plus open source you can fork. Incomplete is fine: architecture and trade-offs are the point.'
+  lede = 'Realistic systems from real domains, plus open source you can fork. The write-up lives here; the code lives on GitHub.'
   empty = 'No projects published yet.'
   examplesHeading = 'Case studies'
   ossHeading = 'Open source'
@@ -75,7 +75,7 @@ locale = 'en-US'
 
 [params.journalDetail]
   back = 'Journal'
-  draftChip = 'Draft (dev)'
+  draftChip = 'Draft'
 
 [menus]
   [[menus.main]]
