@@ -8,10 +8,15 @@ locale = 'en-US'
   author = 'Dylan Matias Correa'
   email = 'correa.dyma@gmail.com'
   github = 'https://github.com/Volkya'
-  githubAriaLabel = 'GitHub'
   linkedin = 'https://www.linkedin.com/in/dymacorrea/'
-  linkedinAriaLabel = 'LinkedIn'
   cvUrl = 'https://drive.google.com/file/d/1_mhwXQLwrHxt-lxcXVvxc7zH42MWw3_R/view?usp=sharing'
+
+[params.footer]
+  prompt = 'Have comments or want to work together?'
+  githubLabel = 'GitHub'
+  githubHandle = '@Volkya'
+  linkedinLabel = 'LinkedIn'
+  linkedinHandle = 'dymacorrea'
 
 [params.home]
   heroTitle = 'Dylan Matias Correa'
