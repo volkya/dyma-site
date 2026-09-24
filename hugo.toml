@@ -16,17 +16,18 @@ locale = 'en-US'
 [params.footer]
   prompt = 'Have comments or want to work together?'
   githubLabel = 'GitHub'
-  githubHandle = '@Volkya'
+  githubHandle = 'Check my code'
   linkedinLabel = 'LinkedIn'
-  linkedinHandle = 'dymacorrea'
+  linkedinHandle = 'My career history'
 
 [params.home]
   heroTitle = 'Dylan Matias Correa'
   heroSubtitle = 'Senior Software Engineer · Cloud & Solutions Architecture · Remote (GMT-3)'
   stackAriaLabel = 'Core stack'
   stackLabel = 'Stack'
-  ctaProjects = 'PROJECTS'
-  ctaCv = 'View CV'
+  ctaProjects = 'What I build'
+  ctaJournal = 'How I think'
+  ctaCv = 'Hire me'
   stack = [
     'Java',
     'Kotlin',
@@ -51,7 +52,7 @@ locale = 'en-US'
 
 [params.projectsPage]
   heading = 'PROJECTS'
-  lede = 'Realistic systems from real domains, plus open source you can fork. The write-up lives here; the code lives on GitHub.'
+  lede = 'What I build — realistic systems from real domains. The write-up lives here; the code lives on GitHub.'
   empty = 'No projects published yet.'
   examplesHeading = 'Case studies'
   ossHeading = 'Open source'
@@ -63,16 +64,16 @@ locale = 'en-US'
 
 [params.journalPage]
   heading = 'JOURNAL'
-  lede = 'Notes on backend systems, architecture, and engineering.'
+  lede = 'How I think — notes on backend systems, architecture, and engineering.'
   empty = 'No notes published yet.'
   draftChip = 'Draft'
   rss = 'RSS'
 
 [params.cvPage]
   heading = 'CV'
-  lede = 'PDF for applications. Code and commit history are on GitHub.'
+  lede = 'The recent summary. Full career history is on LinkedIn; the code is on GitHub.'
   hint = 'Opens in Google Drive — anyone with the link can view.'
-  downloadPdf = 'View CV'
+  downloadPdf = 'Hire me'
 
 [params.projectDetail]
   back = 'Projects'
